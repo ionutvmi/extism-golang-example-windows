@@ -11,26 +11,32 @@ import (
 )
 
 func main() {
-	ctx := extism.NewContext()
+	var ctx = extism.NewContext()
 	defer ctx.Free() // this will free the context and all associated plugins
 
 	var lastModified time.Time
 	var plugin extism.Plugin
+	var emptyPlugin = plugin
 
 	for {
 		var wasmName = "vowels.wasm"
 
-		var file, err = os.Stat(wasmName)
+		var fileStats, err = os.Stat(wasmName)
 
 		if err != nil {
 			fmt.Println("Failed read the WASM file")
 			return
 		}
 
-		var modTime = file.ModTime()
+		var modTime = fileStats.ModTime()
 
 		if modTime != lastModified {
 			fmt.Println("plugin changed, reloading...")
+
+			if emptyPlugin != plugin {
+				plugin.Free()
+			}
+
 			lastModified = modTime
 
 			var manifest = extism.Manifest{
