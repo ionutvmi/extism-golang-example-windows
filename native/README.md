@@ -1,3 +1,4 @@
+
 # Run extism natively on windows
 
 ## Install tinygo and gcc
@@ -15,7 +16,7 @@ scoop install gcc
 
 ## To run the program
 ```shellscript
-cd build
+cd out
 
 .\program.exe Hello
 ```
@@ -23,3 +24,8 @@ cd build
 starting
 Count: 2
 ```
+
+The compiled binary `libs` were download from: https://github.com/extism/extism/releases >
+libextism-x86_64-pc-windows-msvc-v0.X.X.tar.gz
+
+

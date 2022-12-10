@@ -3,27 +3,22 @@
 
 To run this on windows we need https://www.msys2.org/
 
-Install gcc
+Install gcc with pacman
 
-Download the compiled binary from: https://github.com/extism/extism/releases >
+The compiled binary `libs` were download from: https://github.com/extism/extism/releases >
 libextism-x86_64-pc-windows-msvc-v0.X.X.tar.gz
 
 ```shellscript
-# extism.h file added to C:\tools\msys64\mingw64\include
-# extism.dll file added to C:\tools\msys64\mingw64\lib
-
 # installed tinygo + binaryen dependency
 scoop install tinygo
 scoop install binaryen
 
-sh ./build_main_program.sh
-
-sh ./build_plugin.sh
+sh ./build.sh
 ```
 
 To run the program:
 ```shellscript
-cd build
+cd out
 ./program.exe Hello
 ```
 ```output

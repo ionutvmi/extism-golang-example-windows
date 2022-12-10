@@ -21,7 +21,7 @@ func main() {
 		data = []byte("testing from go -> wasm shared memory...")
 	}
 
-	manifest := extism.Manifest{Wasm: []extism.Wasm{extism.WasmFile{Path: "vocals.wasm"}}}
+	manifest := extism.Manifest{Wasm: []extism.Wasm{extism.WasmFile{Path: "vowels.wasm"}}}
 	plugin, err := ctx.PluginFromManifest(manifest, true) // (!) true is needed here if the wasm file was built with tinygo
 	if err != nil {
 		fmt.Println(err)
