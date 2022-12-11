@@ -4,5 +4,5 @@
 Contains the project configured to run in the https://www.msys2.org/ environment
 
 ## ./native
-Contains the porject cofigured to run natively on windows.
+Contains the project configured to run natively on windows.
 
